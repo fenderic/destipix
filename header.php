@@ -10,7 +10,6 @@ die();
 	require 'db.php';
 	require 'instagram.class.php';
 	require 'instagram.config.php';
-
 ?>
 
 <html>
@@ -94,36 +93,27 @@ die();
         	      <li><a href="/mlb/index.php">MLB</a></li>
         	      <li><a href="/nba/index.php">NBA</a></li>
         	      <li><a href="/nhl/index.php">NHL</a></li>
-        	      <!--
-        	      <li><a href="/ncaaf/index.html">NCAAF</a></li>
-        	      <li><a href="/ncaam/index.html">NCAAM</a></li>
-        	      -->
+        	      <li><a href="/mls/index.php">MLS</a></li>
+        	      
         	      <li><a href="#" onclick="location.reload()"><img id="refresh" height="26" width="26" src="/refresh.png"></a></li>
     	          <li><a href="/about.php">About</a></li>
 <?php
-if (!empty($_SESSION['userdetails'])) 
-{
-$data=$_SESSION['userdetails'];
+	if (!empty($_SESSION['userdetails'])) 
+	{
+		$data=$_SESSION['userdetails'];
 
-
-echo "<div style='float:left;margin-left:300px;margin-top:4px'><img src=\"{$data->user->profile_picture}\" width='40px' height='40px'></div>";
-echo '<li><a href="http://www.instagram.com/'.$data->user->username.'/">'.$data->user->username.'</a></li>';
+		echo "<div style='float:left;margin-left:300px;margin-top:4px'><img src=\"{$data->user->profile_picture}\" width='40px' height='40px'></div>";
+		echo '<li><a href="http://www.instagram.com/'.$data->user->username.'/">'.$data->user->username.'</a></li>';
   
-  
-
-// Store user access token
-$instagram->setAccessToken($data);
-
-$userid = $data->user->id;
-$accessToken = $data->access_token;
-  
-
-
-}
-else
-{	
-header('Location: index.php');
-}
+		// Store user access token
+		$instagram->setAccessToken($data);
+		$userid = $data->user->id;
+		$accessToken = $data->access_token;
+	}
+	else
+	{	
+		header('Location: index.php');
+	}
 ?>
     	          <li  style='float:right'><a href='?id=logout'>Logout</a></li>
             	</ul>
@@ -133,8 +123,8 @@ header('Location: index.php');
     	</div>
 
 
-    		<div style="height: 50px;"></div>
+    	<div style="height: 50px;"></div>
 
-    		<center>
+    	<center>
 
-<div style='clear:both'></div>
+		<div style='clear:both'></div>

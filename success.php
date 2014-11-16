@@ -7,7 +7,6 @@ require 'instagram.config.php';
 $code = $_GET['code'];
 
 
-
 // Check whether the user has granted access
 if (true === isset($code))
 {
@@ -19,7 +18,6 @@ if (true === isset($code))
 	if(empty($data->user->username))
 	{
 		header('Location: index.php');
-
 	}
 	else
 	{
@@ -31,7 +29,6 @@ if (true === isset($code))
 		$website=$data->user->website;
 		$id=$data->user->id;
 		$token=$data->access_token;
-
 		$id=mysql_query("select instagram_id from instagram_users where instagram_id='$id'");
 
 		if(mysql_num_rows($id) == 0)
@@ -39,8 +36,7 @@ if (true === isset($code))
 			mysql_query("insert into instagram_users(username,Name,Bio,Website,instagram_id,instagram_access_token) values('$user','$fullname','$bio','$website','$id','$token')");
 		}
 
-	//header('Location: home.php');
-	header('Location: home.php');
+		header('Location: home.php');
 	}
 } 
 else 
@@ -50,7 +46,5 @@ else
 	{
     	echo 'An error occurred: '.$_GET['error_description'];
 	}
-
 }
-
 ?>

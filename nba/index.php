@@ -62,7 +62,7 @@
 		<td>
 			<b>Southeast</b><br>
 			<a href="/nba/atl.php">Atlanta Hawks</a><br>
-			<a href="/nba/cha.php">Charlotte Bobcats</a><br>
+			<a href="/nba/cha.php">Charlotte Hornets</a><br>
 			<a href="/nba/mia.php">Miami Heat</a><br>
 			<a href="/nba/orl.php">Orlando Magic</a><br>
 			<a href="/nba/was.php">Washington Wizards</a><br>
