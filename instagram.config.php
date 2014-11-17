@@ -5,5 +5,4 @@
     'apiSecret'   => 'c0e00cb45ab942f782439be8062135eb',
     'apiCallback' => 'http://www.destipix.com/success.php' // must point to success.php
   ));
-
 ?>

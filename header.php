@@ -1,10 +1,12 @@
-<?php session_start();
+<?php
+	session_start();
+	
 	if($_GET['id']=='logout')
 	{
 		unset($_SESSION['userdetails']);
 		session_destroy();
 		header("Location: http://destipix.com");
-die();
+		die();
 	}
 
 	require 'db.php';
@@ -15,64 +17,73 @@ die();
 <html>
 	<head>
 		<title>Destipix</title>
-		<script type='text/javascript' src='/jquery-1.10.2.min.js'></script>
+		<script type="text/javascript" src="/jquery-1.10.2.min.js"></script>
 		<link rel="stylesheet" href="/css/bootstrap.css" type="text/css">
 		<link rel="stylesheet" href="/css/bootstrap-responsive.css" type="text/css">
 
 		<style>
-		div.head
-		{
-			color: #FFF;
-			font-family: ‘Lucida Sans Unicode’, ‘Lucida Grande’, sans-serif;
-			background-color: #18453B;
-			padding: 15px;
-		}
-		div.gram
-		{
-  			height: 410px;
-  			width: 310px;
-  			float: left;
-  			text-align: center;
-		}
-		div.desc
-		{
-			color: #333;
-			font-family: ‘Lucida Sans Unicode’, ‘Lucida Grande’, sans-serif;
-			font-size: 10px;
-  			text-align: center;
-  			font-weight: normal;
-  			margin: 2px;
-		}
-		#logo
-		{
-			opacity:0.4;
-			filter:alpha(opacity=40); /* For IE8 and earlier */
-		}
-		#logo:hover
-		{
-			opacity:1.0;
-			filter:alpha(opacity=100); /* For IE8 and earlier */
-		}
-		#refresh
-		{
-			opacity:0.4;
-			filter:alpha(opacity=40); /* For IE8 and earlier */
-		}
-		#refresh:hover
-		{
-			opacity:1.0;
-			filter:alpha(opacity=100); /* For IE8 and earlier */
-		}
-		#view
-		{
-			opacity:0.4;
-			filter:alpha(opacity=40); /* For IE8 and earlier */
-		}
-		#view:hover
-		{
-			opacity:1.0;
-			filter:alpha(opacity=100); /* For IE8 and earlier */
-		}
+
+			div.head
+			{
+				color: #FFFFFF;
+				font-family: ‘Lucida Sans Unicode’, ‘Lucida Grande’, sans-serif;
+				background-color: #18453B;
+				padding: 15px;
+			}
+
+			div.gram
+			{
+	  			height: 410px;
+	  			width: 310px;
+	  			float: left;
+	  			text-align: center;
+			}
+
+			div.desc
+			{
+				color: #333333;
+				font-family: ‘Lucida Sans Unicode’, ‘Lucida Grande’, sans-serif;
+				font-size: 10px;
+	  			text-align: center;
+	  			font-weight: normal;
+	  			margin: 2px;
+			}
+
+			#logo
+			{
+				opacity: 0.4;
+				filter: alpha(opacity=40); /* For IE8 and earlier */
+			}
+
+			#logo:hover
+			{
+				opacity: 1.0;
+				filter: alpha(opacity=100); /* For IE8 and earlier */
+			}
+
+			#refresh
+			{
+				opacity: 0.4;
+				filter: alpha(opacity=40); /* For IE8 and earlier */
+			}
+
+			#refresh:hover
+			{
+				opacity: 1.0;
+				filter: alpha(opacity=100); /* For IE8 and earlier */
+			}
+
+			#view
+			{
+				opacity: 0.4;
+				filter: alpha(opacity=40); /* For IE8 and earlier */
+			}
+
+			#view:hover
+			{
+				opacity: 1.0;
+				filter: alpha(opacity=100); /* For IE8 and earlier */
+			}
 		</style>
 	</head>
 	
@@ -115,7 +126,7 @@ die();
 		header('Location: index.php');
 	}
 ?>
-    	          <li  style='float:right'><a href='?id=logout'>Logout</a></li>
+    	          <li  style="float: right;"><a href="?id=logout">Logout</a></li>
             	</ul>
 	          </div><!--/.nav-collapse -->
     	    </div>
@@ -127,4 +138,4 @@ die();
 
     	<center>
 
-		<div style='clear:both'></div>
+		<div style="clear: both;"></div>
